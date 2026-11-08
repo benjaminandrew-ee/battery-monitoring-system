@@ -5,6 +5,21 @@ An ESP32-based battery monitoring system that measures voltage, current, and tem
 
 I built this project to get more hands-on experience with electronics and embedded systems. I wanted to learn more about sensors, communication between components, and using data to control a system. I also got some practice designing schematics and troubleshooting a circuit.
 
+## What I Learned
+
+- Working with sensors and I2C communication.
+- Reading analog signals and collecting measurement data.
+- Using a MOSFET to control a circuit.
+- Designing circuit schematics.
+- Troubleshooting hardware and investigating measurement errors.
+- Processing data and implementing calculations in C++.
+
+## Firmware
+
+The firmware is written in C++ using the Arduino IDE. It handles sensor communication, data collection, discharge control, and battery measurements.
+
+[View Source Code](src/battery_monitoring_system.ino)
+
 ## Hardware
 - ESP32-S3
 - INA226 voltage and current sensor
@@ -21,6 +36,18 @@ The ESP32 collects voltage, current, and temperature measurements from the batte
 
 ## Photos
 
-### Completed Prototype
+### Completed Build
 
 [View Prototype Photo](https://github.com/user-attachments/assets/af0d56b4-0042-4482-aae2-b19aa42c081f)
+
+[View Circuit Schematic](https://github.com/user-attachments/assets/05567cf4-07ac-48ec-be65-62c255312d40)
+
+## Testing and Results
+
+The system was tested using a Molicel P28A 18650 lithium-ion battery and a 6Ω discharge resistor. The ESP32 collected voltage, current, and temperature measurements and performed calculations for capacity, energy, internal resistance, and estimated state of health (SOH).
+
+During testing, approximately 0.8V of voltage drop was observed across the circuit. Further investigation identified significant voltage drops at the alligator clip connections, with approximately 0.3V lost at each clip. This contributed to inaccurate internal resistance calculations and caused the low-voltage cutoff to activate earlier than expected, shortening the discharge test.
+
+The resulting SOH estimate was approximately 60%, which was not representative of the expected condition of the new battery. Temperature was also measured throughout testing but was not incorporated into the final SOH calculations.
+
+Given the experience and functionality gained from the project, I decided to conclude testing rather than replace the connections and continue troubleshooting. With additional development time, I would improve the circuit connections, calibrate the measurement system, and incorporate temperature into the SOH estimation process.
