@@ -44,6 +44,15 @@ The ESP32 collects voltage, current, and temperature measurements from the batte
 
 The system was tested using a Molicel P28A 18650 lithium-ion battery and a 6Ω discharge resistor. The ESP32 collected voltage, current, and temperature measurements and performed calculations for capacity, energy, internal resistance, and estimated state of health (SOH).
 
+===== DISCHARGE COMPLETE =====
+Stopped by: cutoff voltage
+Duration: 12088 s
+Rest voltage (start): 4.173 V
+Capacity: 1.6538 Ah
+Energy: 5.2811 Wh
+SOH: 59.1 % (of 2.80 Ah rated)
+Internal resistance: 1548.6 mOhm
+
 During testing, approximately 0.8V of voltage drop was observed across the circuit. Further investigation identified significant voltage drops at the alligator clip connections, with approximately 0.3V lost at each clip. This contributed to inaccurate internal resistance calculations and caused the low-voltage cutoff to activate earlier than expected, shortening the discharge test.
 
 The resulting SOH estimate was approximately 60%, which was not representative of the expected condition of the new battery. Temperature was also measured throughout testing but was not incorporated into the final SOH calculations.
