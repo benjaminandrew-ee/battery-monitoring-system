@@ -18,8 +18,6 @@ I built this project to get more hands-on experience with electronics and embedd
 
 The firmware is written in C++ using the Arduino IDE. It handles sensor communication, data collection, discharge control, and battery measurements.
 
-[View Source Code](src/battery_monitoring_system.ino)
-
 ## Hardware
 - ESP32-S3
 - INA226 voltage and current sensor
